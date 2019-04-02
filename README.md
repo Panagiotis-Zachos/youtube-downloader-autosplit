@@ -1,5 +1,5 @@
-# youtube-downloader-autosplit
-Simple app I created (Python 3.7.3) to easily download full albums from youtube
+# Youtube-Downloader-Autosplit
+Simple app I created (Python 3.7.3) to easily download and split full albums from youtube
 
 This has only been tested on Windows 10
 Libraries needed: pyperclip, youtube_dl and pydub
