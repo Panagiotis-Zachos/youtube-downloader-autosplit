@@ -1,10 +1,21 @@
 # youtube-downloader-autosplit
 Simple app I created (Python 3.7.3) to easily download full albums from youtube
 
+This has only been tested on Windows 10
 Libraries needed: pyperclip, youtube_dl and pydub
 ffmpeg is also necessary.
 
-Download the python script and use as follows.
+1. To install the libraries, download the requirements.txt along the video_downloader.py
+2. Hit Win+R and type "cmd"
+3. From there type "cd Downloads"
+4. Then type "pip install -r requirements.txt"
+
+To download ffmpeg go to: https://ffmpeg.zeranoe.com/builds/
+Unzip, and add the /bin folder to PATH
+Tutorial Here: https://windowsloop.com/install-ffmpeg-windows-10/
+
+Common Usage
+=========
 
 python video_download [VIDEO_URL] [OUPUT_LOCATION]
 
