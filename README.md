@@ -26,4 +26,4 @@ yourself using the following format:
 
 .
 
-
+You can check song_list.txt in this repo for an example
