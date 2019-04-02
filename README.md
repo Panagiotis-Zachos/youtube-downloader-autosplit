@@ -5,7 +5,7 @@ This has only been tested on Windows 10
 Libraries needed: pyperclip, youtube_dl and pydub
 ffmpeg is also necessary.
 
-1. To install the libraries, download the requirements.txt along the video_downloader.py
+1. To install the libraries, download the requirements.txt
 2. Hit Win+R and type "cmd"
 3. From there type "cd Downloads"
 4. Then type "pip install -r requirements.txt"
