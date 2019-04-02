@@ -17,8 +17,13 @@ time of each track. If that fails it will try to read from 'song_list.txt' that 
 yourself using the following format:
 
 {Title1} {StartTime1}
+
 {Title2} {StartTime2}
+
 .
+
 .
+
 .
+
 
