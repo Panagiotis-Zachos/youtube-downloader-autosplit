@@ -12,6 +12,7 @@ ffmpeg is also necessary.
 
 To download ffmpeg go to: https://ffmpeg.zeranoe.com/builds/
 Unzip, and add the /bin folder to PATH
+
 Tutorial Here: https://windowsloop.com/install-ffmpeg-windows-10/
 
 Common Usage
