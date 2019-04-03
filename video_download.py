@@ -103,7 +103,7 @@ def main():
             'preferredquality': '192',
         }],
         'logger': MyLogger(),
-        'simulate': 'True',
+        #'simulate': 'True',
         'progress_hooks': [my_hook],
         
     }
