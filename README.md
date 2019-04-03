@@ -1,9 +1,14 @@
 # Youtube-Downloader-Autosplit
-Simple app I created (Python 3.7.3) to easily download and split full albums from youtube
+Simple command prompt app I created (Python 3.7.3) to easily download and split full albums into separate tracks from youtube
 
-This has only been tested on Windows 10
-Libraries needed: pyperclip, youtube_dl and pydub
-ffmpeg is also necessary.
+This has only been tested on Windows 10!
+
+Requirements
+-------
+Python 3.7
+
+Libraries: pyperclip, youtube_dl, pydub
+ffmpeg
 
 1. To install the libraries, download the requirements.txt
 2. Hit Win+R and type "cmd"
@@ -17,6 +22,7 @@ Tutorial Here: https://windowsloop.com/install-ffmpeg-windows-10/
 
 Common Usage
 =========
+In cmd type:
 
 python video_download [VIDEO_URL] [OUPUT_LOCATION]
 
