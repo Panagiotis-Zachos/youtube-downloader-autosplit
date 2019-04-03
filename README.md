@@ -5,7 +5,9 @@ This has only been tested on Windows 10!
 
 Requirements
 -------
-Python 3.7
+Python 3.7 added to PATH
+
+If you don't know what this means, check out this tutorial: https://geek-university.com/python/add-python-to-the-windows-path/
 
 Libraries: pyperclip, youtube_dl, pydub
 ffmpeg
