@@ -32,14 +32,25 @@ def convert_to_ms(start_time):
     return start
 
 def parse_description(description):
+
     regex = r'.*[0-9]{1,2}:[0-9]{2}.*'
     song_list = re.findall(regex, description)
+
     #Parse the video description for the song list
     #if not found, the user has to provide it
     #to give correct results the song list has to exist in 
     #{song_start} - Title or Title - {song_start} format
     if len(song_list) == 0:
-        song_list = open('song_list.txt', 'r')
+        try:
+            f1 = open('song_list.txt', 'r')
+            for line in f1:
+                song_list.append(line)
+        except FileNotFoundError as error:
+            print(error)
+            print("Song list was not in the video description. You need to create the song_list.txt \
+            \nusing the format specified at: https://github.com/Panagiotis-Zachos/youtube-downloader-autosplit")
+            sys.exit()
+
     print("Song List:")
     for song in song_list:
         print(song.strip())
@@ -67,19 +78,32 @@ def arg_parser():
         sys.exit()
     return (url, output_path)
 
+def song_parser(song_list):
+    regex = r"[0-9]*:?[0-9]{1,2}:[0-9]{2}"
+    name_list = []
+    dur_list = []        
+    for line in song_list:
+        start_time = re.findall(regex, line)[0]
+        dur_list.append(convert_to_ms(start_time))
+        name_list.append(line.replace(start_time,'').strip())
+
+    num_of_tracks = len(name_list)
+    return (name_list,dur_list,num_of_tracks)
+
 def main():
     
     url, output_path = arg_parser()
-
+    
     ydl_opts = {
         'format': 'bestaudio/best',
-        'outtmpl': output_path + r'%(title)s.%(ext)s',
+        'outtmpl': output_path + r'/%(title)s/%(title)s.%(ext)s',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
         'logger': MyLogger(),
+        'simulate': 'True',
         'progress_hooks': [my_hook],
         
     }
@@ -87,30 +111,28 @@ def main():
 
         info = ydl.extract_info(url)
         print('Done Converting. Splitting into tracks...')
+
         title = info['title']
         description = info['description']
+        output_path += '/' + title + '/' #Into folder
+        title = title.replace("/","_")
         mp3_audio = AudioSegment.from_file(output_path + title + ".mp3", format="mp3")
 
         song_list = parse_description(description)
-        regex = r"[0-9]*:?[0-9]{1,2}:[0-9]{2}"
-        
-        name_list = []
-        dur_list = []        
-        for line in song_list:
-            start_time = re.findall(regex, line)[0]
-            dur_list.append(convert_to_ms(start_time))
-            name_list.append(line.replace(start_time,'').strip())
+        name_list,dur_list,num_of_tracks = song_parser(song_list)
         tot_duration = len(mp3_audio)
         dur_list.append(tot_duration)
-        num_of_tracks = len(name_list)
 
         for i in range(num_of_tracks):
             start = dur_list[i]
             end = dur_list[i+1]
             cut = mp3_audio[start:end]
-            track = open("{}.mp3".format(name_list[i]),'wb')
+            track = open("{}{}.mp3".format(output_path,name_list[i]),'wb')
             cut.export(track, format='mp3')
             print("{} Tracks Remaining".format(num_of_tracks - (i+1)))
+    print("Deleting downloaded file...")
+    os.remove(output_path + title + ".mp3")
+
 
 if __name__ == "__main__":
     t0 = time()
