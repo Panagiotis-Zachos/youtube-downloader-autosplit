@@ -2,6 +2,7 @@
 Simple command prompt app I created (Python 3.7.3) to easily download and split full albums into separate tracks from youtube
 
 This has only been tested on Windows 10!
+Does not support VERY big albums (more than 1.5hours long)
 
 Requirements
 -------
