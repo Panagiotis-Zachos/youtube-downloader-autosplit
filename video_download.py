@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from pydub import AudioSegment
 from time import time
+from pathlib import Path
 import pyperclip 
 import youtube_dl
 import os
@@ -58,7 +59,7 @@ def parse_description(description):
 
 def arg_parser():
     if len(sys.argv) == 1: # No arguments passed, read url from clipboard and set outpath as current dir
-        output_path = os.getcwd() + "\\"
+        output_path = str(Path.home()) + "\\Music"
         url = pyperclip.paste()
         regex = r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
         matches = re.findall(regex, url)
@@ -67,7 +68,7 @@ def arg_parser():
             print("Give video URL as argument or copy it to clipboard before running.")
             sys.exit()
     elif len(sys.argv) == 2: # 1 arg passed, the url
-        output_path = os.getcwd() + "\\"
+        output_path = str(Path.home()) + "\\Music"
         url = sys.argv[1]
     elif len(sys.argv) == 3: # both arguments passed
         url = sys.argv[1]
@@ -103,7 +104,7 @@ def main():
             'preferredquality': '192',
         }],
         'logger': MyLogger(),
-        #'simulate': 'True',
+        # 'simulate': 'True',
         'progress_hooks': [my_hook],
         
     }
