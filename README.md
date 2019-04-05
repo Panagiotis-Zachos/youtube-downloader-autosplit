@@ -29,7 +29,7 @@ In cmd type:
 
 python video_download [VIDEO_URL] [OUPUT_LOCATION]
 
-If no [OUPUT_LOCATION] is given the current working directory will be used
+If no [OUPUT_LOCATION] is given the Music directory will be used
 If no [VIDEO_URL] is given the programm will try to read from the clipboard. So you can
 copy the URL and just run "python video_download"
 
