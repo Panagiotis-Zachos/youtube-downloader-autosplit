@@ -4,6 +4,15 @@ Simple command prompt app I created (Python 3.7.3) to easily download and split 
 This has only been tested on Windows 10!
 Does not support VERY big albums (more than 1.5hours long)
 
+Installation
+-------
+
+There are two ways to install. 
+
+1. Automatically using setup.exe under: https://github.com/Panagiotis-Zachos/youtube-downloader-autosplit/releases
+
+2. Μanually by following the steps under requirements.
+
 Requirements
 -------
 Python 3.7 added to PATH
