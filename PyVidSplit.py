@@ -137,8 +137,8 @@ def main():
             'preferredcodec': 'wav',
             'preferredquality': '0',
         }],
-        'simulate': 'True',
-        'keepvideo': 'True',
+        # 'simulate': 'True',
+        # 'keepvideo': 'True',
         'logger': MyLogger(),
         'progress_hooks': [my_hook],
     }
