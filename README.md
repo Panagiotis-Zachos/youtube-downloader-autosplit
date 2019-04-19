@@ -1,4 +1,4 @@
-# Youtube-Downloader-Autosplit
+# Youtube-Downloader-Autosplit v2
 Simple command prompt app I created (Python 3.7.3) to easily download and split full albums into separate tracks from youtube
 
 This has only been tested on Windows 10!
