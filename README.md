@@ -39,8 +39,10 @@ In cmd type:
 python PyVidSplit -u(--URL) [VIDEO_URL] -o(--output) [Output Directory] -t(--type) [Output File Type]
 
 If no [Output Directory] is given the Music directory will be used
+
 If no [VIDEO_URL] is given the programm will try to read from the clipboard. So you can
 copy the URL and just run "python video_download"
+
 If no [Output File Type] is given the default is .opus
 
 If you use the installer replace "python PyVidSplit" with "PyVidSplit.exe" without the "
