@@ -11,7 +11,7 @@ There are two ways to install.
 
 1. Automatically using setup.exe under: https://github.com/Panagiotis-Zachos/youtube-downloader-autosplit/releases
 
-2. Μanually by following the steps under requirements.
+2. Μanually by following the steps under requirements (recommended).
 
 Requirements
 -------
