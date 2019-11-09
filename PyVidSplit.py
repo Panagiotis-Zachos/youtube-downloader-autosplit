@@ -24,7 +24,7 @@ def arg_parser():
         sys.exit(2)
     output_path = str(Path.home()) + "\\Music"
     url = pyperclip.paste()
-    ftype = 'opus'
+    ftype = 'mp3'
 
     for o, a in opts:
         if o in ('-u', '--URL'):
